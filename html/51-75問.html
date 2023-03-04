@@ -18269,6 +18269,52 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-julia"><pre><span></span><span class="nd">@chain</span><span class="w"> </span><span class="n">df_customers</span><span class="w"> </span><span class="k">begin</span>
+<span class="w">    </span><span class="n">select</span><span class="p">(</span><span class="ss">:customer_id</span><span class="p">,</span><span class="w"> </span><span class="ss">:gender_cd</span><span class="p">)</span>
+<span class="w">    </span><span class="nd">@rtransform</span><span class="p">(</span>
+<span class="w">        </span><span class="ss">:gender_cd_col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">string</span><span class="p">(</span><span class="s">&quot;gender_cd_&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:gender_cd</span><span class="p">),</span>
+<span class="w">        </span><span class="ss">:gender_cd_val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span>
+<span class="w">    </span><span class="n">unstack</span><span class="p">(</span><span class="ss">:gender_cd_col</span><span class="p">,</span><span class="w"> </span><span class="ss">:gender_cd_val</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="o">=</span><span class="nb">false</span><span class="p">)</span>
+<span class="w">    </span><span class="n">select</span><span class="p">(</span><span class="n">Not</span><span class="p">(</span><span class="ss">:gender_cd</span><span class="p">))</span>
+<span class="w">    </span><span class="n">first</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[31]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div><div style = "float: left;"><span>10×4 DataFrame</span></div><div style = "clear: both;"></div></div><div class = "data-frame" style = "overflow-x: scroll;"><table class = "data-frame" style = "margin-bottom: 6px;"><thead><tr class = "header"><th class = "rowNumber" style = "font-weight: bold; text-align: right;">Row</th><th style = "text-align: left;">customer_id</th><th style = "text-align: left;">gender_cd_1</th><th style = "text-align: left;">gender_cd_9</th><th style = "text-align: left;">gender_cd_0</th></tr><tr class = "subheader headerLastRow"><th class = "rowNumber" style = "font-weight: bold; text-align: right;"></th><th title = "String15" style = "text-align: left;">String15</th><th title = "Bool" style = "text-align: left;">Bool</th><th title = "Bool" style = "text-align: left;">Bool</th><th title = "Bool" style = "text-align: left;">Bool</th></tr></thead><tbody><tr><td class = "rowNumber" style = "font-weight: bold; text-align: right;">1</td><td style = "text-align: left;">CS021313000114</td><td style = "text-align: right;">true</td><td style = "text-align: right;">false</td><td style = "text-align: right;">false</td></tr><tr><td class = "rowNumber" style = "font-weight: bold; text-align: right;">2</td><td style = "text-align: left;">CS037613000071</td><td style = "text-align: right;">false</td><td style = "text-align: right;">true</td><td style = "text-align: right;">false</td></tr><tr><td class = "rowNumber" style = "font-weight: bold; text-align: right;">3</td><td style = "text-align: left;">CS031415000172</td><td style = "text-align: right;">true</td><td style = "text-align: right;">false</td><td style = "text-align: right;">false</td></tr><tr><td class = "rowNumber" style = "font-weight: bold; text-align: right;">4</td><td style = "text-align: left;">CS028811000001</td><td style = "text-align: right;">true</td><td style = "text-align: right;">false</td><td style = "text-align: right;">false</td></tr><tr><td class = "rowNumber" style = "font-weight: bold; text-align: right;">5</td><td style = "text-align: left;">CS001215000145</td><td style = "text-align: right;">true</td><td style = "text-align: right;">false</td><td style = "text-align: right;">false</td></tr><tr><td class = "rowNumber" style = "font-weight: bold; text-align: right;">6</td><td style = "text-align: left;">CS020401000016</td><td style = "text-align: right;">false</td><td style = "text-align: right;">false</td><td style = "text-align: right;">true</td></tr><tr><td class = "rowNumber" style = "font-weight: bold; text-align: right;">7</td><td style = "text-align: left;">CS015414000103</td><td style = "text-align: right;">true</td><td style = "text-align: right;">false</td><td style = "text-align: right;">false</td></tr><tr><td class = "rowNumber" style = "font-weight: bold; text-align: right;">8</td><td style = "text-align: left;">CS029403000008</td><td style = "text-align: right;">false</td><td style = "text-align: right;">false</td><td style = "text-align: right;">true</td></tr><tr><td class = "rowNumber" style = "font-weight: bold; text-align: right;">9</td><td style = "text-align: left;">CS015804000004</td><td style = "text-align: right;">false</td><td style = "text-align: right;">false</td><td style = "text-align: right;">true</td></tr><tr><td class = "rowNumber" style = "font-weight: bold; text-align: right;">10</td><td style = "text-align: left;">CS033513000180</td><td style = "text-align: right;">true</td><td style = "text-align: right;">false</td><td style = "text-align: right;">false</td></tr></tbody></table></div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
