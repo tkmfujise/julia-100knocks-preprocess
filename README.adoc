@@ -1,0 +1,4 @@
+データサイエンス100本ノック(構造化データ加工編) を Julia で解いてみた。
+
+元データと問題は以下
+https://github.com/The-Japan-DataScientist-Society/100knocks-preprocess
